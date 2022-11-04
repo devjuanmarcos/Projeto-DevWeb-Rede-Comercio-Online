@@ -3,8 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.div`
 
     box-sizing: border-box;
+    background-color: #131315;
+    width:100vw;
+    height:100vh;
+`    
+export const Content = styled.div`
 
-.login-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -14,16 +18,17 @@ export const Container = styled.div`
     background: #242026;
     box-shadow: 0 15px 25px rgba(143, 124, 236, 0.7);
     border-radius: 10px;
-}
 
-.login-box h2 {
+
+ h2 {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
     text-align: center;
 }
 
-.login-box .user-box input {
+
+ .user-box input {
     position: relative;
     width: 100%;
     padding: 10px 0;
@@ -31,12 +36,13 @@ export const Container = styled.div`
     color: #fff;
     margin-bottom: 30px;
     border: none;
+    border-radius:0;
     border-bottom: 1px solid #fff;
     outline: none;
     background: transparent;
 }
 
-.login-box .user-box label {
+ .user-box label {
     position: relative;
     left: 0;
     top: -60px;
@@ -47,8 +53,13 @@ export const Container = styled.div`
     transition: .5s;
 }
 
-.login-box .user-box input:focus~label,
-.login-box .user-box input:valid~label {
+.user-box input:focus~label{    
+    top: -85px;
+    left: 0;
+    color: #8F7CEC;
+    font-size: 12px;
+}
+.user-box input:valid~label { 
     top: -85px;
     left: 0;
     color: #8F7CEC;
@@ -78,7 +89,7 @@ export const Container = styled.div`
 .button-form {
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
+    margin-top: 20px;    
 }
 
 #register {
