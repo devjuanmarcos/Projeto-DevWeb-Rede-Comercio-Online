@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import AuthContext from "../../context/auth"
+import AuthContext from "../../context/Auth"
 
 export function Login() {
     const { signIn } = useContext(AuthContext)
@@ -7,7 +7,7 @@ export function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    function handleSingIn(){
+    function handleSignIn(){
         signIn(email, password)
     }
 
@@ -23,19 +23,19 @@ export function Login() {
 
             <h1>Login</h1>
             <input 
-                sttyle={{marginTop: 10, padding: 5}} 
+                style={{marginTop: 10, padding: 5}} 
                 placeholder="E-mail"
                 value={email}
                 onChange={(e)=> setEmail(e.target.value)} 
             />
             <input 
-                sttyle={{marginTop: 10, padding: 5}} 
+                style={{marginTop: 10, padding: 5}} 
                 placeholder="senha"
                 value={password}
                 onChange={(e)=> setPassword(e.target.value)} 
             />
             <button 
-                onClick={handleSingIn}
+                onClick={handleSignIn}
                 style={{ marginTop: 10, padding: 5, cursor: 'poniter'}}>Entrar</button>
         </div>
     )

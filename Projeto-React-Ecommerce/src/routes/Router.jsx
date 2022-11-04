@@ -1,15 +1,16 @@
 import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
-import AuthContext from "../context/auth";
+import AuthContext from "../context/Auth";
+import { Home } from "../pages/Home/Home";
+import { Login } from "../pages/Login/Login";
 
 export function Router(){
-    const {isAuthenricated} = useContext(AuthContext)
+    const {isAuthenticated} = useContext(AuthContext)
 
-    if (!isAuthenricated) {
+    if (!isAuthenticated) {
         return (
             <Routes>
                 <Route path="/" element={<Login />} />
-                <Route path="*" element={<Login />} />
             </Routes>
         )
     }

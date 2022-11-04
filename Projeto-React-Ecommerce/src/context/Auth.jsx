@@ -4,7 +4,7 @@ const AuthContext = createContext ({});
 
 export const AuthProvider = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false)
-//    const [setUserName, setUserName] = useState ("")
+    const [userName, setUserName] = useState ("")
 
     // login automático
     useEffect(() => {
@@ -23,7 +23,7 @@ export const AuthProvider = ({children}) => {
    },[]) 
 
 // aqui tem que ajeitar para poder puxar as informações da API
-    function singIn(email, password){
+    function signIn(email, password){
         if (email === "marcelle@gmail.com" && password === "123456"){
             localStorage.setItem('@authenticated', true)
             localStorage.setItem('@user', "Marcelle")
@@ -33,7 +33,7 @@ export const AuthProvider = ({children}) => {
         }
     }
 
-    function singOut() {
+    function signOut() {
         setIsAuthenticated(false)
         setUserName("")
         localStorage.clear()
@@ -44,8 +44,8 @@ export const AuthProvider = ({children}) => {
         // tudo o que por dentro de value o código pode acessar pelo useContext
             value={{
                 isAuthenticated,
-                singIn,
-                singOut,
+                signIn,
+                signOut,
                 userName
             }}
         >
