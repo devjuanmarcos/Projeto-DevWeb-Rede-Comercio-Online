@@ -1,5 +1,6 @@
 import { useContext, useState } from "react"
 import AuthContext from "../../context/Auth"
+import { Container } from "./LoginStyled"
 
 export function Login() {
     const { signIn } = useContext(AuthContext)
@@ -12,31 +13,38 @@ export function Login() {
     }
 
     return (
-        <div
-            style={{
-                display: "flex",
-                height: "90vh",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-            }}>
+        <Container>
+            <div class="login-box">
+            <h2>Login</h2>
+            <form>
+                <div class="user-box">             
+                    <input type="text" name="" required=""
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}/>
+                        <label>E-mail</label> 
+                </div>
 
-            <h1>Login</h1>
-            <input 
-                style={{marginTop: 10, padding: 5}} 
-                placeholder="E-mail"
-                value={email}
-                onChange={(e)=> setEmail(e.target.value)} 
-            />
-            <input 
-                style={{marginTop: 10, padding: 5}} 
-                placeholder="senha"
-                value={password}
-                onChange={(e)=> setPassword(e.target.value)} 
-            />
-            <button 
-                onClick={handleSignIn}
-                style={{ marginTop: 10, padding: 5, cursor: 'pointer'}}>Entrar</button>
-        </div>
+                <div class="user-box">
+                    <input type="password" name="" required=""
+                        value={password}
+                        onChange={(e)=> setPassword(e.target.value)}/> 
+                        <label>Password</label>
+                </div>
+
+                <div class="button-form">
+                    <a id="submit" onClick={handleSignIn}>
+                        Entrar
+                    </a>
+                </div>
+
+                <div id="register">
+                    Ainda não tem uma conta ?
+                    <a href="#">
+                        Registre-se
+                    </a>
+                </div>
+            </form>
+            </div>
+        </Container>
     )
 }
