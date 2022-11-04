@@ -1,0 +1,104 @@
+Páginas{
+   - Home
+   - Categorias
+   - Produto(Cliente)
+   - Produto(Funcionario)
+   - Cart
+   - Login
+   - Cadastro
+   - Perfil
+
+    HomeCliente (Só muda a NavBar)
+}
+
+Páginas - Routes{
+    <NavBarHome>
+        Home --> Produto(Funcionario)
+
+        Home -- > Cadastro
+
+        Home -- > Login
+    </NavBarHome>
+
+        Login --> Home(Cliente)
+
+    <NavBarCliente>
+        Home(Cliente) --> Cart
+        
+        Home(Cliente) --> Perfil
+
+        Home(Cliente) -deslogar-> Home
+    </NavBarCliente>
+
+    Categorias -- > Produto(Cliente)
+
+    Cadastro -(?)-> Login
+    
+    Home, Home(Cliente) -- > Categorias
+
+    <Footer>
+        Home, Home(Cliente) -- > Categorias
+
+        Home, Home(Cliente) -- > Sobre
+    </Footer>
+}
+
+API{
+	PATCH Cliente
+	PATCH Produto
+}
+
+
+Componentes Gerais{
+    <NavBarHome/>
+    <NavBarCLiente/>
+    <mini-Cart/>
+    <Footer/>
+}
+
+Cadastro - Funções{
+    POST Cliente
+    ViaCEPs (jquery mask)
+}
+
+Login - Funções{
+    GetByEmail Cliente
+}
+
+HomeCliente{
+}
+
+Perfil funções{
+    PATCH Cliente
+    PATCH Endereco
+    GET Pedidos
+}
+
+Categoria{
+    GET categorias
+}
+
+Produto(CLiente){
+    GET produto
+}
+
+Produto(funcionário) funções{
+    GET Produtos
+    POST Produtos
+    DELETE Produtos
+    PATCH Produtos
+	
+    GET Pedidos
+    DELETE Pedido
+    PATCH Pedidos
+}
+
+Cart funções{
+    "404 Carrinho Not found"
+    PATCH produto(qtidade)
+    DELETE produto
+    POST Pedido - (POST ItemPedido)
+    Somar valores produtos
+    Modalzin ("compra finalizada com Sucesso")
+    Selecionar Produtos (Opcional se der tempo no final pq essa página vai ser terrivel)
+}
