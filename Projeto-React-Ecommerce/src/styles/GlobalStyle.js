@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
         --cor-background: #323242;
         --cor-highlight: #DEC6F6;
         --cor-roxo-primario: #6040B4;
-        --cor-roxo-secundario: #6040B4;
+        --cor-roxo-secundario: #33167b;
     }
 
     *{
@@ -17,10 +17,16 @@ export const GlobalStyle = createGlobalStyle`
 
     input, textarea{
         cursor: text;
+        padding: 0.3rem 0.8rem;
+        border: 0;
+        border-radius: 15px;
         outline: none;
     }
 
     button, a{
+        text-decoration: none;
+        border: 0;
+        outline: 0;
         cursor: pointer;
     }
 `;

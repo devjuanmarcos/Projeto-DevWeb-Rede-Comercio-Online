@@ -1,0 +1,32 @@
+Etapa 0 ----------------------------
+
+- Cores OK
+- Nome
+- Home
+- Estrutura Inicial OK
+
+Etapa 1 -----------------------------
+
+- Routes / Context OK
+
+- Ajeitar API OK
+
+Etapa 1.75 ---------------------------------
+
+- Home
+
+- Login e NavbarHome/Cliente (em andamento)
+
+- Cadastro
+
+- Categorias
+
+Etapa 2 -------------------------------
+
+- Perfil (precisa cadastro)
+
+- Cart
+
+- Produto (Funcionário)
+
+- Produto(Cliente) (precisa Categoria)
