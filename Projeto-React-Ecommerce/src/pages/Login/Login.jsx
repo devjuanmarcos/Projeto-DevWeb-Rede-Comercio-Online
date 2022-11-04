@@ -36,7 +36,7 @@ export function Login() {
             />
             <button 
                 onClick={handleSignIn}
-                style={{ marginTop: 10, padding: 5, cursor: 'poniter'}}>Entrar</button>
+                style={{ marginTop: 10, padding: 5, cursor: 'pointer'}}>Entrar</button>
         </div>
     )
 }

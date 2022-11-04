@@ -6,6 +6,8 @@ export const AuthProvider = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [userName, setUserName] = useState ("")
 
+    console.log(isAuthenticated);
+    
     // login automático
     useEffect(() => {
         async function loadStorageData(){
