@@ -1,7 +1,7 @@
 import { Container } from "./clienteFormStyled"
 import { useState } from "react"
 
-export function ClienteForm({ submit }) {
+export function ClienteForm( props ) {
    const [cliente, setCliente] = useState({
       nome_completo: "",
       email: "",
@@ -19,8 +19,7 @@ export function ClienteForm({ submit }) {
 
    function handleSubmit(event) {
       event.preventDefault()
-      console.log(cliente.enderecos)
-      submit(cliente)
+      props(cliente)
    }
 
    return (
