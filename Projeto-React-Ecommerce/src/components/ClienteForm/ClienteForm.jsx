@@ -1,7 +1,7 @@
 import { Container } from "./clienteFormStyled"
 import { useState } from "react"
 
-export function ClienteForm( props ) {
+export function ClienteForm({ props }) {
    const [cliente, setCliente] = useState({
       nome_completo: "",
       email: "",
@@ -12,7 +12,7 @@ export function ClienteForm( props ) {
          {
             cep: "",
             numero: 0,
-            complemento: ""
+            complemento: "",
          },
       ],
    })
@@ -78,7 +78,14 @@ export function ClienteForm( props ) {
                      name="Cep"
                      type="text"
                      placeholder="Digite seu Cep (apenas número)"
-                     onChange={e => setCliente({ ...cliente, enderecos: [{...enderecos, cep: e.target.value }] })}
+                     onChange={e =>
+                        setCliente({
+                           ...cliente,
+                           enderecos: cliente.enderecos.map(endereco => {
+                              return { ...endereco, cep: e.target.value }
+                           }),
+                        })
+                     }
                   />
                   <label>CEP</label>
                </div>
@@ -86,7 +93,14 @@ export function ClienteForm( props ) {
                   <input
                      type="text"
                      placeholder="Digite o número da sua residência"
-                     onChange={e => setCliente({ ...cliente, enderecos: [{...enderecos, numero: e.target.value }] })}
+                     onChange={e =>
+                        setCliente({
+                           ...cliente,
+                           enderecos: cliente.enderecos.map(endereco => {
+                              return { ...endereco, numero: e.target.value }
+                           }),
+                        })
+                     }
                   />
                   <label>Numero</label>
                </div>
@@ -94,7 +108,14 @@ export function ClienteForm( props ) {
                   <input
                      type="text"
                      placeholder="Digite complemento, se houver"
-                     onChange={e => setCliente({ ...cliente, enderecos: [{...enderecos, complemento: e.target.value }] })}
+                     onChange={e =>
+                        setCliente({
+                           ...cliente,
+                           enderecos: cliente.enderecos.map(endereco => {
+                              return { ...endereco, complemento: e.target.value }
+                           }),
+                        })
+                     }
                   />
                   <label>Complemento</label>
                </div>
