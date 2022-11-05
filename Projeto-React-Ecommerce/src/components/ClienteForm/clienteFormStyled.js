@@ -1,11 +1,14 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
+   display: flex;
+   flex-direction: column;
    position: absolute;
    top: 50%;
    left: 50%;
    width: 400px;
-   padding: 40px;
+   padding: 1.5rem;
+   padding-top: 0;
    transform: translate(-50%, -50%);
    background: #242026;
    box-shadow: 0 15px 25px rgba(143, 124, 236, 0.7);
@@ -13,8 +16,8 @@ export const Container = styled.div`
 
    h2 {
       height: 20%;
-      margin: 0 0 30px;
-      padding: 0;
+      margin: 1rem;
+      top: 0;
       position: static;
       color: #fff;
       text-align: center;
@@ -32,14 +35,22 @@ export const Container = styled.div`
 
       ::-webkit-scrollbar-track {
          background: var(--cor-background);
+         border-radius: 1rem;
       }
 
       ::-webkit-scrollbar-thumb {
          background: var(--cor-roxo-primario);
+         border-radius: 1rem;
       }
 
       ::-webkit-scrollbar-thumb:hover {
          background: var(--cor-roxo-secundario);
+      }
+
+      .user-box {
+         &:first-child input {
+            margin-top: 0.5rem;
+         }
       }
 
       .user-box input {
@@ -60,7 +71,7 @@ export const Container = styled.div`
          position: relative;
          left: 0;
          top: -60px;
-         padding: 10px 0;
+         padding: 0.125rem 0;
          font-size: 16px;
          color: #fff;
          pointer-events: none;
@@ -79,6 +90,12 @@ export const Container = styled.div`
          left: 0;
          color: #8f7cec;
          font-size: 12px;
+      }
+
+      .user-box {
+         &:last-child label {
+            margin-bottom: 0rem;
+         }
       }
    }
 
@@ -102,7 +119,7 @@ export const Container = styled.div`
       transition: 0.5s;
       letter-spacing: 0.1rem;
       border: 1px solid #8f7cec;
-      margin: auto;
+      border-radius: 5px;
    }
 
    #submit:hover {
@@ -119,5 +136,6 @@ export const Container = styled.div`
       text-decoration: none;
       text-transform: uppercase;
       border: 1px solid #8f7cec;
+      border-radius: 5px;
    }
 `
