@@ -57,7 +57,7 @@ export const Container = styled.div`
          position: relative;
          width: 100%;
          padding: 10px 0;
-         font-size: 16px;
+         font-size: 1rem;
          color: #fff;
          margin-bottom: 30px;
          border: none;
@@ -72,7 +72,7 @@ export const Container = styled.div`
          left: 0;
          top: -60px;
          padding: 0.125rem 0;
-         font-size: 16px;
+         font-size: 1rem;
          color: #fff;
          pointer-events: none;
          transition: 0.5s;
@@ -82,14 +82,14 @@ export const Container = styled.div`
          top: -85px;
          left: 0;
          color: #8f7cec;
-         font-size: 12px;
+         font-size: 0.75rem;
       }
 
-      .user-box input:valid ~ label {
+      .user-box input:valid ~{
          top: -85px;
          left: 0;
          color: #8f7cec;
-         font-size: 12px;
+         font-size: 0.75rem;
       }
 
       .user-box {
