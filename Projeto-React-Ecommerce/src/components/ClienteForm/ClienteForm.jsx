@@ -39,6 +39,7 @@ export function ClienteForm({ props }) {
                      required
                      type="text"
                      name="nome"
+                     placeholder="sim"
                      onChange={e => setCliente({ ...cliente, nome_completo: e.target.value })}
                   />
                   <label>Nome Completo</label>
@@ -49,25 +50,36 @@ export function ClienteForm({ props }) {
                      required
                      type="email"
                      name="email"
+                     placeholder="sim"
                      onChange={e => setCliente({ ...cliente, email: e.target.value })}
                   />
                   <label>Email</label>
                </div>
 
                <div className="user-box">
-                  <input required name="cpf" onChange={e => setCliente({ ...cliente, cpf: e.target.value })} />
+                  <input
+                     required
+                     name="cpf"
+                     placeholder="sim"
+                     onChange={e => setCliente({ ...cliente, cpf: e.target.value })}
+                  />
                   <label>CPF</label>
                </div>
 
                <div className="user-box">
                   <input
                      name="data-nascimento"
+                     placeholder="sim"
                      onChange={e => setCliente({ ...cliente, data_nascimento: e.target.value })}
                   />
                   <label>Data de Nascimento</label>
                </div>
                <div className="user-box">
-                  <input name="tel" onChange={e => setCliente({ ...cliente, telefone: e.target.value })} />
+                  <input
+                     name="tel"
+                     placeholder="sim"
+                     onChange={e => setCliente({ ...cliente, telefone: e.target.value })}
+                  />
                   <label>Telefone</label>
                </div>
 
@@ -75,6 +87,7 @@ export function ClienteForm({ props }) {
                   <input
                      required
                      name="Cep"
+                     placeholder="sim"
                      type="text"
                      onChange={e =>
                         setCliente({
@@ -91,6 +104,7 @@ export function ClienteForm({ props }) {
                   <input
                      required
                      type="text"
+                     placeholder="sim"
                      onChange={e =>
                         setCliente({
                            ...cliente,
@@ -105,6 +119,7 @@ export function ClienteForm({ props }) {
                <div className="user-box">
                   <input
                      type="text"
+                     placeholder="sim"
                      onChange={e =>
                         setCliente({
                            ...cliente,

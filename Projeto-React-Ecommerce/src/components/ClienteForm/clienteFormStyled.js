@@ -65,7 +65,13 @@ export const Container = styled.div`
          border-bottom: 1px solid #fff;
          outline: none;
          background: transparent;
+
       }
+
+      input::placeholder{
+            opacity: 0;
+            
+         }
 
       .user-box label {
          position: relative;
@@ -85,7 +91,7 @@ export const Container = styled.div`
          font-size: 0.75rem;
       }
 
-      .user-box input:valid ~{
+      .user-box input:not(:placeholder-shown) ~ label{
          top: -85px;
          left: 0;
          color: #8f7cec;
