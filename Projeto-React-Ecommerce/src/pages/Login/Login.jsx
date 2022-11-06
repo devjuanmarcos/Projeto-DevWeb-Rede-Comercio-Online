@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import AuthContext from "../../context/Auth"
 import { Container, Content } from "./LoginStyled"
 
@@ -29,7 +29,7 @@ export function Login() {
                         <input type="password" name="" required
                             value={password}
                             onChange={(e) => setPassword(e.target.value)} />
-                        <label>Password</label>
+                        <label>CPF</label>
                     </div>
 
                     <div class="button-form">
