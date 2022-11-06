@@ -22,18 +22,21 @@ export function Cadastro() {
          })
    }
 
-   function redirecionarLogin() {
-      navigate("/")
-   }
-
-   function toastieSuccess(loading) {
-      toast.update(loading, {
-         render: "Legal! Você já está cadastrado!",
+   async function toastieSuccess(loading) {
+      let timeout = 3500;
+        toast.update(loading, {
+         render: "Legal! Você já está cadastrado! Vamos levaar você para o Login",
          type: "success",
+         autoClose: timeout,
          isLoading: false,
          closeButton: true,
          closeOnClick: true,
+
       })
+
+      setTimeout(() => {
+        navigate("/")
+      }, timeout); 
    }
 
    function toastieError400(loading) {
