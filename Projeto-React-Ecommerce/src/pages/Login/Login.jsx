@@ -1,4 +1,5 @@
 import { useContext, useState } from "react"
+import { Link } from "react-router-dom"
 import AuthContext from "../../context/Auth"
 import { Container, Content } from "./LoginStyled"
 
@@ -39,9 +40,9 @@ export function Login() {
 
                         <div id="register">
                             Ainda não tem uma conta ?
-                            <a href="#">
+                            <Link to="/cadastro" >
                                 Registre-se
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </form>
