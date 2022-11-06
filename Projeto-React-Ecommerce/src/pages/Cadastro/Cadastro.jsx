@@ -1,34 +1,38 @@
-import { Container, Form } from "./cadastroStyled"
+import { useNavigate } from "react-router-dom"
+import { ClienteForm } from "../../components/ClienteForm/ClienteForm"
+import { Container } from "./cadastroStyled"
+import clienteService from "../../services/requests/clienteService"
+import { toast } from "react-toastify"
 
-export function Cadastro(){
-    return(
-        <Container>
-            <Form method="post">
-                <div className="row">
-                    <label for="nome">Nome Completo</label>
-                    <input type="text" name="nome"/>
-                </div>
+export function Cadastro() {
+   const navigate = useNavigate()
 
-                <div className="row">
-                    <label for="email">Email</label>
-                    <input type="email" name="email"/>
-                </div>
-                
-                <div className="row">
-                    <label for="cpf">CPF</label>
-                    <input type="text" name="cpf"/>
-                    <label for="data-nascimento">Data de Nascimento</label>
-                    <input type="date" name="data-nascimento"/>
-                </div>
+   function postCliente(cliente) {
+      const loading = toast.loading("...cadastrando")
 
-                <div className="row">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" name="telefone" />
-                    
-                    <button type="submit">Cadastrar</button>
-                    <button type="reset">Limpar Campos</button>
-                </div>
-            </Form>
-        </Container>
-    )
+      clienteService
+         .postCliente(cliente)
+         .then(response => {
+            console.log(response)
+            toast.update(loading, { render: "Legal! Você já está cadastrado!", type: "success", isLoading: false })
+         })
+         .catch(error => {
+            console.log(error)
+            toast.error(loading, {
+               render: "Opa, algo de errado não está certo. Cheque seu cadastro",
+               type: "error",
+               isLoading: false,
+            })
+         })
+   }
+
+   function redirecionarLogin() {
+      navigate("/")
+   }
+
+   return (
+      <Container>
+         <ClienteForm props={postCliente} />
+      </Container>
+   )
 }
