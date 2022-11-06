@@ -1,5 +1,6 @@
 import { Container } from "./clienteFormStyled"
 import { useState } from "react"
+import { toast } from "react-toastify"
 
 export function ClienteForm({ props }) {
    const [cliente, setCliente] = useState({
@@ -19,6 +20,12 @@ export function ClienteForm({ props }) {
 
    function handleSubmit(event) {
       event.preventDefault()
+      !cliente.nome_completo ? toast.warning("Por favor preencha seu Nome Completo") : null
+      !cliente.email ? toast.warning("Por favor preencha seu Email") : null
+      !cliente.cpf ? toast.warning("Por favor preencha seu Cpf (apenas números)") : null
+      !cliente.enderecos[0].cep ? toast.warning("Por favor preencha o CEP (apenas números)") : null
+      !cliente.enderecos[0].numero ? toast.warning("Por favor preencha o Numero do seu endereço") : null
+
       props(cliente)
    }
 
@@ -29,9 +36,9 @@ export function ClienteForm({ props }) {
             <div className="campos-cadastro">
                <div className="user-box">
                   <input
+                     required
                      type="text"
                      name="nome"
-                     placeholder="Digite se nome completo"
                      onChange={e => setCliente({ ...cliente, nome_completo: e.target.value })}
                   />
                   <label>Nome Completo</label>
@@ -39,45 +46,36 @@ export function ClienteForm({ props }) {
 
                <div className="user-box">
                   <input
+                     required
                      type="email"
                      name="email"
-                     placeholder="Digite seu email"
                      onChange={e => setCliente({ ...cliente, email: e.target.value })}
                   />
                   <label>Email</label>
                </div>
 
                <div className="user-box">
-                  <input
-                     name="cpf"
-                     placeholder="Digite seu cpf (apenas número)"
-                     onChange={e => setCliente({ ...cliente, cpf: e.target.value })}
-                  />
+                  <input required name="cpf" onChange={e => setCliente({ ...cliente, cpf: e.target.value })} />
                   <label>CPF</label>
                </div>
 
                <div className="user-box">
                   <input
                      name="data-nascimento"
-                     placeholder="25/12/0000"
                      onChange={e => setCliente({ ...cliente, data_nascimento: e.target.value })}
                   />
                   <label>Data de Nascimento</label>
                </div>
                <div className="user-box">
-                  <input
-                     name="tel"
-                     placeholder="Digite seu telefone (apenas número)"
-                     onChange={e => setCliente({ ...cliente, telefone: e.target.value })}
-                  />
+                  <input name="tel" onChange={e => setCliente({ ...cliente, telefone: e.target.value })} />
                   <label>Telefone</label>
                </div>
 
                <div className="user-box">
                   <input
+                     required
                      name="Cep"
                      type="text"
-                     placeholder="Digite seu Cep (apenas número)"
                      onChange={e =>
                         setCliente({
                            ...cliente,
@@ -91,8 +89,8 @@ export function ClienteForm({ props }) {
                </div>
                <div className="user-box">
                   <input
+                     required
                      type="text"
-                     placeholder="Digite o número da sua residência"
                      onChange={e =>
                         setCliente({
                            ...cliente,
@@ -107,7 +105,6 @@ export function ClienteForm({ props }) {
                <div className="user-box">
                   <input
                      type="text"
-                     placeholder="Digite complemento, se houver"
                      onChange={e =>
                         setCliente({
                            ...cliente,
@@ -117,7 +114,7 @@ export function ClienteForm({ props }) {
                         })
                      }
                   />
-                  <label>Complemento</label>
+                  <label>Complemento (se houver)</label>
                </div>
             </div>
 
