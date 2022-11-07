@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
+import Footer from "../../components/Footer/Footer"
 import AuthContext from "../../context/Auth"
 import { Perfil } from "../Perfil/perfil"
 
@@ -7,6 +8,7 @@ export function Home() {
    const { signOut, user } = useContext(AuthContext)
 
    return (
+      <>
       <div>
          <h1>Olá {user.nome_completo}</h1>
          <button onClick={() => signOut()}>Sair</button>
@@ -14,5 +16,7 @@ export function Home() {
             <h1>Seu Perfil Aqui</h1>
          </Link>
       </div>
+      <Footer />
+      </>
    )
 }
