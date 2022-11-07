@@ -1,7 +1,7 @@
 import { api } from "../api/api";
 
 const getAllClientes = () => {
-    return api.get(`clientes`)
+    return api.get(`cliente`)
 }
 
 const getClienteById = (id) => {
