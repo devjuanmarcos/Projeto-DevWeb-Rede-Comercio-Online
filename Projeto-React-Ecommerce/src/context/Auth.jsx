@@ -5,7 +5,7 @@ const AuthContext = createContext({})
 
 export const AuthProvider = ({ children }) => {
    const [isAuthenticated, setIsAuthenticated] = useState(false)
-   const [user, setUser] = useState("")
+   const [user, setUser] = useState({})
    const [userId, setUserId] = useState(0)
    const [usuarios, setUsuarios] = useState([])
 
@@ -24,27 +24,18 @@ export const AuthProvider = ({ children }) => {
    useEffect(() => {
       async function loadStorageData() {
          const storageIsAuthenticated = await localStorage.getItem("@authenticated")
-         const storageUser = await localStorage.getItem("@userId")
+         const storageUserId = await localStorage.getItem("@userId")
+         const storageUser = await JSON.parse(localStorage.getItem("@userObject"))
 
-         if (storageIsAuthenticated && storageUser) {
+         if (storageIsAuthenticated && storageUserId) {
             setIsAuthenticated(true)
-            setUserId(storageUser)
+            setUserId(storageUserId)
+            setUser(storageUser)
          }
       }
 
       loadStorageData()
    }, [])
-
-   // aqui tem que ajeitar para poder puxar as informações da API
-   function signIn(email, password) {
-      if (email === "marcelle@gmail.com" && password === "123456") {
-         localStorage.setItem("@authenticated", true)
-         localStorage.setItem("@user", "Marcelle")
-         setIsAuthenticated(true)
-         setUserName("Marcelle")
-         return
-      }
-   }
 
    function signInDB(email, password) {
       getClientes()
@@ -53,6 +44,7 @@ export const AuthProvider = ({ children }) => {
          if (email === usuario.email) {
             if (password === usuario.cpf) {
                localStorage.setItem("@authenticated", true)
+               localStorage.setItem("@userObject", JSON.stringify(usuario))
                localStorage.setItem("@userId", usuario.id_cliente)
                localStorage.setItem("@userName", usuario.nome_completo)
                setUser(usuario)
@@ -77,7 +69,10 @@ export const AuthProvider = ({ children }) => {
             isAuthenticated,
             signInDB,
             signOut,
-            user
+            setUser,
+            user,
+            userId,
+            setUserId
          }}>
          {children}
       </AuthContext.Provider>
