@@ -6,47 +6,47 @@ export const Container = styled.div`
     padding: 20px 20px;
     width: 100%;
     height:20%;
-    background-color: #cac4ce;
-    text-align: right;
-    
+    background-color: #323242; 
+    position: relative;
+    margin-bottom: 10px;
+
+img {
+    width: 15%;
+    height: 10%;
+    display: inline-block; 
+}   
     
 #navbarSupportedContent {
-    text-align: right;
-    
-
-
+    text-align: right; 
     }
 
 ul {
     width:90%;
-    display: flex;
-    ;
+    display: flex;    
     list-style: none;
     padding: 0.5rem;
     flex-direction: inherit;
     align-self: right;
     gap:20px;
-
 }
 
 button {
-    display:flexbox;
     border-radius: 10px;
     flex-direction: row-reverse;
-    font-size: 1.5rem;
-    ;
+    font-size: 1.5rem;    
     position: relative;
     display: flex;
     padding: 12px;
-    background-color: #8d86c9;
-    color: #f7ece1;
-    
+    background-color: #fff;
+    color: #302858;    
 }
+
 link {
     display:flex;
     background-color: blue;
     size: 5rem;
 }
+
 .container {
     height: 60px
     background-color= yellow;
@@ -54,27 +54,25 @@ link {
     padding: 5px 20px;
     display: flex;
     align-items: center;
-    }
+}
 
-     
+.logo {
+    display: flex;
+    justify-content:first baseline;
+    align-items: center;
+    cursor: pointer;
+}        
 
-    
+h1 {
+    font-size: 100%;
+    background: -webkit-linear-gradient(#ff0a6c, #2d27ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+
+}
+
+.nav-item {
+    width: 20%;
+    height: 5%;
+}
 `
-
-export const BotaoNav = styled.span`    
-    button{
-        display: block-inline;
-        margin: 0 10px 0 15px;
-        background-color: #5c5ca8;
-        color:  #fff;
-        border-radius: 8px;
-        border: 1px solid;
-        
-        &:hover{
-          
-            color: #5c5ca8;
-            transition: 0.5s;
-        }
-    }
-   
-`;
