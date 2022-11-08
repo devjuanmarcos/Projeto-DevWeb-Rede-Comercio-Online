@@ -1,7 +1,7 @@
 import { api } from "../api/api";
 
 const getAllClientes = () => {
-    return api.get(`clientes`)
+    return api.get(`cliente`)
 }
 
 const getClienteById = (id) => {
@@ -12,13 +12,13 @@ const postCliente = (cliente) => {
     return api.post(`/cliente`, cliente)
 }
 
-const patchCliente = (id, cliente) => {
-    return api.patch(`/cliente/${id}`, cliente)
+const putCliente = (id, cliente) => {
+    return api.put(`/cliente/${id}`, cliente)
 }
 
 export default {
     getAllClientes,
     getClienteById,
     postCliente,
-    patchCliente
+    putCliente
 }
