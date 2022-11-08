@@ -14,6 +14,7 @@ const ProdutoCards = ({ prod }) => {
     <Container>
       <div>
         <div className="insideCard">
+          <div>{prod.}
           <p>{prod.nome}</p>
           <p>{prod.valor_unitario}</p>
 
