@@ -7,5 +7,6 @@ export const Container = styled.div`
     height: 100vh;
     padding: 2.5vh 5vw;
     color: var(--cor-highlight);
-    background-color: var(--cor-background);
+    background-color: #131315;
+
 `;
