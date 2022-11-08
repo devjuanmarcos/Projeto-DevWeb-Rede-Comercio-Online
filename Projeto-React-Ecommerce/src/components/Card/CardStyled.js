@@ -18,7 +18,6 @@ padding: 5rem 8rem;
 color: #333333;
 `;
 
-
 export const CardCardContent = styled.div`
 display: flex;
 justify-content: space-between;
@@ -26,6 +25,24 @@ align-items: center;
 margin-top: 5rem;
 @media only screen and (max-width:900px){
     flex-direction: column;
+}
+
+margin: 0 auto;
+padding: 0 50px;
+max-width: 1300px;
+width: 100%;
+@media (max-width:400px){
+    padding: 0 10px;
+}
+@media (max-width:991px) {
+    padding: 0 30px;
+}
+@media (min-width: 1500px) {
+    max-width: 1500px;
+}
+@media (min-width: 1800px) {
+    max-width: 1800px;
+    padding: 0 30px;
 }
 `;
 
