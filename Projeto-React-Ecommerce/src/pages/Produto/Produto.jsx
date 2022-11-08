@@ -4,21 +4,21 @@ import { useState, useEffect } from "react";
 import produtoService from "../../services/requests/produtoService"; 
 
 export const Produto = () => {
-    const {
-        state: { products },
-    } = CartState();
 
+    // const {
+    //     state: { products },
+    // } = CartState();
 
+    
      const [produtinhos, setProdutinhos] = useState([]);
 
     useEffect(() => {
         produtoService.getAllProdutos().then(response => {
-            // console.log(response);
             setProdutinhos(response.data)
         }).catch(error => {
             console.log(error);
         })
-    }, []);
+    }, [produtinhos]);
 
     console.log(produtinhos)
     

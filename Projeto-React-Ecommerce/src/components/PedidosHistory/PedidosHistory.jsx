@@ -30,10 +30,10 @@ export function PedidosHistory() {
    }
 
    return ( 
-    <Container>
+    <div>
         {pedidosCLiente.map((pedido) =>{
             <Pedidos pedido={ pedido }/>
         })}
-    </Container>
+    </div>
    )
 }

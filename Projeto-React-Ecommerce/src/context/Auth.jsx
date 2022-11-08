@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import clienteService from "../services/requests/clienteService"
 
 const AuthContext = createContext({})
@@ -8,6 +9,7 @@ export const AuthProvider = ({ children }) => {
    const [user, setUser] = useState({})
    const [userId, setUserId] = useState(0)
    const [usuarios, setUsuarios] = useState([])
+   const navigate = useNavigate()
 
    async function getClientes() {
       clienteService
@@ -50,7 +52,8 @@ export const AuthProvider = ({ children }) => {
                setUser(usuario)
                setUserId(usuario.id_cliente)
                setIsAuthenticated(true)
-               return
+               
+               navigate("/")
             }
          }
       })

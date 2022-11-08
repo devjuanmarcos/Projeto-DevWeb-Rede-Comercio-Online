@@ -5,18 +5,19 @@ import { Container, Content } from "./LoginStyled"
 import NavBar from "../../components/NavBar/NavBar" 
 
 export function Login() {
-    const { signIn } = useContext(AuthContext)
+    const { signInDB } = useContext(AuthContext)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     function handleSignIn() {
-        signIn(email, password)
+        signInDB(email, password)
 
     }
 
     return (
-        <> < NavBar />  
+        <> 
+        < NavBar />  
         <Container>
             <Content>
                 <h2>Login</h2>

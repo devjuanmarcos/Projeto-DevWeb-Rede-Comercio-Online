@@ -24,9 +24,9 @@ const Footer = () => {
             </Text>
           </Column>
           <Column>
-            <FooterLink href="#">Todos os produtos</FooterLink>
-            <FooterLink href="#">Mouse</FooterLink>
-            <FooterLink href="#">Teclado</FooterLink>
+            <FooterLink href="/produto">Todos os produtos</FooterLink>
+            <FooterLink href="/produto">Mouse</FooterLink>
+            <FooterLink href="/produto">Teclado</FooterLink>
           </Column>
           <Column>
             <FooterLink href="#">F.A.Q.s</FooterLink>
@@ -34,17 +34,17 @@ const Footer = () => {
             <FooterLink href="#">Termos e condições</FooterLink>
           </Column>
           <Column>
-            <FooterLink href="#">
+            <FooterLink href="http://www.facebook.com">
               <i className="fab fa-facebook-f">
                 <span style={{ marginLeft: "10px" }}>Facebook</span>
               </i>
             </FooterLink>
-            <FooterLink href="#">
+            <FooterLink href="http://www.instagram.com">
               <i className="fab fa-instagram">
                 <span style={{ marginLeft: "10px" }}>Instagram</span>
               </i>
             </FooterLink>
-            <FooterLink href="#">
+            <FooterLink href="http://www.twitter.com">
               <i className="fab fa-twitter">
                 <span style={{ marginLeft: "10px" }}>Entre em contato</span>
               </i>

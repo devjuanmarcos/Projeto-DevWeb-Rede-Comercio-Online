@@ -7,6 +7,8 @@ import { Cadastro } from "../pages/Cadastro/Cadastro"
 import { Perfil } from "../pages/Perfil/perfil"
 import { PageNotFound } from "../pages/PageNotFound/404"
 import { Contato } from "../pages/Contato/Contato"
+import { Produto } from "../pages/Produto/Produto"
+import { Cart } from "../pages/Carrinho/Carrinho"
 
 export function Router() {
    const { isAuthenticated } = useContext(AuthContext)
@@ -18,6 +20,7 @@ export function Router() {
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/contato" element={<Contato />} />
+            <Route path="/produto" element={<Produto />} />
             <Route path=" * " element={<PageNotFound />} />
          </Routes>
       )
@@ -28,6 +31,7 @@ export function Router() {
          <Route path="/" element={<Home />} />
          <Route path="/perfil" element={<Perfil />} />
          <Route path="/contato" element={<Contato />} />
+         <Route path="/carrinho" element={<Cart />} />
          <Route path=" * " element={<PageNotFound />} />
       </Routes>
    )

@@ -49,7 +49,6 @@ link {
 
 .container {
     height: 60px;
-    background-color: yellow;
     color: #9067c6;
     padding: 5px 20px;
     display: flex;

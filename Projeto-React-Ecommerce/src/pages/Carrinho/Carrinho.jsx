@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { CartState } from "../../context/Context";
 
 
-const Cart = () => {
+export function Cart(){
   const {
     state: { cart },
     dispatch,
@@ -78,5 +78,3 @@ const Cart = () => {
     </div>
   );
 };
-
-export default Cart;
