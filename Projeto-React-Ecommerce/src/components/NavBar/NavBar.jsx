@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import { Notepad, ShoppingCart, SignIn, SignOut, TrademarkRegistered, User } from 'phosphor-react';
+import { House, Notepad, ShoppingCart, SignIn, SignOut, TrademarkRegistered, User } from 'phosphor-react';
 import { Link } from 'react-router-dom';
 import { Home } from '../../pages/Home/Home';
 import { Container } from './Styles'
+import Logo from '../../assets/logo.png'
+
 
 
 function NavBar() {
@@ -13,11 +15,16 @@ function NavBar() {
     <Container> 
     <div className="container">             
       <div className="logo">
-        <img src="../../assets/image/logo.jpeg" />
-       CyberShop 2077       
+        <img src={Logo} alt="logo" />
+          
+            <h1>
+              <link to="/"></link> 
+              <li> CyberShop 2077 </li>             
+            </h1> 
+            
       </div>
 
-    {/* <button       
+    <a       
       className="navbar-toggler"
       onClick={ function(){
        setTimeout(function(){ animation(); });
@@ -27,50 +34,61 @@ function NavBar() {
       aria-controls="navbarSupportedContent" 
       aria-expanded="true" 
       aria-label="Toggle navigation">      
-    </button> */}
+    </a>
 
     <div 
         className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">        
                       
             <li className="nav-item">
-              <button className="nav-link" to="/" exact>
-                <link>
-                {/* link para Home */}
-                </link>Home 
-              </button>
+              <Link to="/">
+                <button className="nav-link" to="/" exact>
+                  <House>                              
+                  </House>Home                 
+                </button>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <button className="nav-link" to="/about" exact>
-                <User>
-                </User>Cadastro
-              </button> 
+              <Link to="/cadastro">
+                <button className="nav-link" to="/about" exact>
+                  <User>                  
+                  </User>Cadastro
+                </button> 
+              </Link>
             </li>
 
             <li className="nav-item">
-              <button className="nav-link" to="/service" exact>
-                <SignIn>
-                </SignIn>Login
-              </button>
+              <Link to="/login">
+                <button className="nav-link" to="/service" exact>
+                 <SignIn>
+                  </SignIn>Login
+                </button>
+              </Link>
             </li>
             <li className="nav-item">
-              <button className="nav-link" to="/testimonial" exact>
-                <ShoppingCart>
-                </ShoppingCart>Cart
-              </button>
+              <Link to="/cart">
+               <button className="nav-link" to="/cart" exact>
+                  <ShoppingCart>
+                  </ShoppingCart>Cart
+                </button>
+              </Link>
             </li>
             <li className="nav-item">
-              <button className="nav-link" to="/contact" exact>
+              <Link to="/contato">
+              <button className="nav-link" to="/contato" exact>
                 <Notepad>
                 </Notepad>Contato
               </button>
+              </Link>
             </li>
             <li className="nav-item">
-              <button className="nav-link" to="/about" exact>
-                <SignOut>
-                </SignOut>sair
-              </button> 
+              <Link to="/">
+                <button className="nav-link" to="/" exact>
+                 <SignOut>
+                  </SignOut>sair
+               </button> 
+              </Link>
             </li>
         </ul>
       </div>
@@ -78,8 +96,7 @@ function NavBar() {
 
 </Container>
      
-  );
-    
+  );    
 }
 
 export default NavBar;

@@ -3,6 +3,7 @@ import { ClienteForm } from "../../components/ClienteForm/ClienteForm"
 import { Container } from "./cadastroStyled"
 import clienteService from "../../services/requests/clienteService"
 import { toast } from "react-toastify"
+import NavBar from "../../components/NavBar/NavBar";
 
 export function Cadastro() {
    const navigate = useNavigate()
@@ -60,8 +61,11 @@ export function Cadastro() {
    }
 
    return (
+      <> 
+      <NavBar />
       <Container>
          <ClienteForm props={postCliente} />
       </Container>
+      </>
    )
 }
