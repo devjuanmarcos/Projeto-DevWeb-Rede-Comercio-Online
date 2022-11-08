@@ -14,9 +14,11 @@ export function Router() {
    if (!isAuthenticated) {
       return (
          <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/contato" element={<Contato />} />
+            <Route path=" * " element={<PageNotFound />} />
          </Routes>
       )
    }
