@@ -1,11 +1,10 @@
 import { useState, useContext, useEffect } from "react"
 import AuthContext from "../../context/Auth"
-import { Pedido } from "../Pedidos/Pedidos"
-import clienteService from "../../services/requests/clienteService"
+import { Pedidos } from "../Pedidos/Pedidos"
 import pedidoService from "../../services/requests/pedidoService"
 
 export function PedidosHistory() {
-   const { user } = userContext(AuthContext)
+   const { user } = useContext(AuthContext)
 
    const [listaPedidos, setListaPedidos] = useState([])
    const [pedidosCLiente, setPedidosCliente] = ([])
@@ -33,7 +32,7 @@ export function PedidosHistory() {
    return ( 
     <Container>
         {pedidosCLiente.map((pedido) =>{
-            <Pedido pedido={pedido}/>
+            <Pedidos pedido={ pedido }/>
         })}
     </Container>
    )

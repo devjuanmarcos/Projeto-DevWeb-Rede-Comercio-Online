@@ -1,5 +1,5 @@
 export function Pedidos({ pedido }) {
-    const itemPedido = pedido.itemPedido;
+   const itemPedido = pedido.itemPedido
 
    return (
       <table>
@@ -14,21 +14,18 @@ export function Pedidos({ pedido }) {
             <th>Valor</th>
          </thead>
          <tbody>
-            for (let index = 0; index < itemPedido.length; index++) {
-                const item = itemPedido[index];
-                
-                <tr>
-                 <td>{pedido.id_pedido}</td>
-                 <td>{pedido.data_pedido}</td>
-                 <td>{pedido.data_envio}</td>
-                 <td>{pedido.data_entrega}</td>
-                 <td>{pedido.status}</td>
-                 <td>{item.produto.nome}</td>
-                 <td>{item.quantidade}</td>
-                 <td>{item.valorLiquido}</td>
-              </tr>
-            }
-            
+            {itemPedido.map((item) => {
+               <tr>
+                  <td>{pedido.id_pedido}</td>
+                  <td>{pedido.data_pedido}</td>
+                  <td>{pedido.data_envio}</td>
+                  <td>{pedido.data_entrega}</td>
+                  <td>{pedido.status}</td>
+                  <td>{item.produto.nome}</td>
+                  <td>{item.quantidade}</td>
+                  <td>{item.valorLiquido}</td>
+               </tr>
+            })}
          </tbody>
       </table>
    )
