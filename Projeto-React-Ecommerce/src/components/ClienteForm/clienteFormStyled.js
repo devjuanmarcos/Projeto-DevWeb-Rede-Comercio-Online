@@ -13,6 +13,7 @@ export const Container = styled.div`
    background: #242026;
    box-shadow: 0 15px 25px rgba(143, 124, 236, 0.7);
    border-radius: 10px;
+   margin-top: 8rem;
 
    h2 {
       height: 20%;

@@ -2,18 +2,21 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import AuthContext from "../../context/Auth"
 import { Container, Content } from "./LoginStyled"
+import NavBar from "../../components/NavBar/NavBar" 
 
 export function Login() {
-    const { signInDB } = useContext(AuthContext)
+    const { signIn } = useContext(AuthContext)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     function handleSignIn() {
-        signInDB(email, password)
+        signIn(email, password)
+
     }
 
     return (
+        <> < NavBar />  
         <Container>
             <Content>
                 <h2>Login</h2>
@@ -48,5 +51,7 @@ export function Login() {
                 </form>
             </Content>
         </Container>
+        </>
+       
     )
 }
