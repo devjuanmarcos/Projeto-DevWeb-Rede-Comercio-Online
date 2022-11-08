@@ -7,13 +7,13 @@ export const cartReducer = (state, action) => {
           ...state,
           cart: state.cart.filter((c) => c.id_produto !== action.payload.id_produto),
         };
-      case "CHANGE_CART_QTY":
-        return {
-          ...state,
-          cart: state.cart.filter((c) =>
-            c.id_produto === action.payload.id_produto ? (c.qty = action.payload.qty) : c.qty
-          ),
-        };
+        case "CHANGE_CART_QTY":
+          return {
+            ...state,
+            cart: state.cart.filter((c) =>
+              c.id === action.payload.id ? (c.qty = action.payload.qty) : c.qty
+            ),
+          };
       default:
         return state;
     }

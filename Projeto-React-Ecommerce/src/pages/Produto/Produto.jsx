@@ -23,9 +23,9 @@ export const Produto = () => {
     console.log(produtinhos)
     
     return (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <h1>Produtos</h1>
-
+        <div>
+            <h1 style={{ width:'100%', color:'white' }}>Produtos</h1>
+            <div style={{ display: 'flex',  textAlign:'center', background:'black', width:'100vw', height:'100vh', justifyContent:"space-between"}}>
             {
                 produtinhos.map(prod => {
                     return (
@@ -33,6 +33,7 @@ export const Produto = () => {
                     )
                 })
             }
+            </div>
         </div>
     )
 

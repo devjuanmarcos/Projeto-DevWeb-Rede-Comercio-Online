@@ -10,11 +10,17 @@ const Cart = () => {
   } = CartState();
   const [total, setTotal] = useState();
 
+  const [qty, setQty] = useState();
+
   useEffect(() => {
     setTotal(
       cart.reduce((acc, curr) => acc + Number(curr.valor_unitario) * curr.qty, 0)
     );
   }, [cart]);
+
+  console.log(qty)
+
+  
 
   return (
     <div >
@@ -27,11 +33,10 @@ const Cart = () => {
                 </div>
                 <div>R${prod.valor_unitario}</div>               
                 <div>
-                  <input  
-                    type={"range"}
-                    min={1}
-                    max={15}                 
-                    value={prod.qty}
+                  <select 
+                    // type={"range"}
+                              
+                    // value={}
                     onChange={(e) =>
                       dispatch({
                         type: "CHANGE_CART_QTY",
@@ -42,10 +47,10 @@ const Cart = () => {
                       })
                     }
                   >
-                    {/* {[...Array(prod).keys()].map((x) => (
+                    {[...Array(prod.qtd_estoque).keys()].map((x) => (
                       <option key={x + 1}>{x + 1}</option>
-                    ))} */}
-                  </input>
+                    ))}
+                  </select>
                 </div>
                 <div>
                   <button                   
@@ -63,7 +68,7 @@ const Cart = () => {
             </div>
           ))}
       </div>
-      <div >
+      <div >      
         <span >Subtotal ({cart.length}) itens</span>
         <span style={{ fontWeight: 700, fontSize: 20 }}>Total: {total}</span>
         <button disabled={cart.length === 0}>

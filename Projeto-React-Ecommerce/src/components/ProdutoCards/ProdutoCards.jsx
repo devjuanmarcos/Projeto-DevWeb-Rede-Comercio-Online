@@ -1,4 +1,5 @@
-import {CartState } from "../../context/Context"
+import { CartState } from "../../context/Context"
+import { Container } from "./ProdutoCardsStyled";
 
 
 const ProdutoCards = ({ prod }) => {
@@ -10,15 +11,15 @@ const ProdutoCards = ({ prod }) => {
   console.log(cart);
 
   return (
-    <div >
+    <Container>
       <div>
-        <div style={{ paddingBottom: 20 }}>
-          <div>{prod.nome}</div>
-          <div >
-            <span>{prod.valor_unitario}</span>         
-          </div>
+        <div className="insideCard">
+          <p>{prod.nome}</p>
+          <p>{prod.valor_unitario}</p>
+
           {cart.some((p) => p.id_produto === prod.id_produto) ? (
-            <button              
+            <button
+            style={{backgroundColor:'red'}}
               onClick={() =>
                 dispatch({
                   type: "REMOVE_FROM_CART",
@@ -30,19 +31,21 @@ const ProdutoCards = ({ prod }) => {
             </button>
           ) : (
             <button
+            
               onClick={() =>
                 dispatch({
                   type: "ADD_TO_CART",
                   payload: prod,
                 })
-              }             
-            >   
-            Adicionar ao carrinho          
+              }
+              disabled={prod.qtd_estoque <1}
+            >
+              {prod.qtd_estoque <1 ? "Estoque esgotado" : "Adicionar ao carrinho"}
             </button>
           )}
-        </div>  
-        </div>    
-    </div>
+        </div>
+      </div>
+    </Container>
   );
 };
 

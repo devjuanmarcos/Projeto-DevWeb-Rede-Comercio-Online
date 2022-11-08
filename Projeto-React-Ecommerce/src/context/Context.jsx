@@ -15,7 +15,8 @@ const Cart = createContext();
         id_produto: "",
         nome: "",
         valor_unitario: "",
-        image: ""
+        image: "",
+        qty:1
     }));
     
 
