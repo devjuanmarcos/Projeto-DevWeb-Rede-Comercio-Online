@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Container = styled.div`
     font-size:4rem;
@@ -48,8 +48,8 @@ link {
 }
 
 .container {
-    height: 60px
-    background-color= yellow;
+    height: 60px;
+    background-color: yellow;
     color: #9067c6;
     padding: 5px 20px;
     display: flex;
@@ -75,4 +75,5 @@ h1 {
     width: 20%;
     height: 5%;
 }
-`
+
+`;

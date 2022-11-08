@@ -14,7 +14,6 @@ export function Home() {
       <>
       <NavBar />
       <div>
-         <button onClick={() => signOut()}>Sair</button>
          <Link to="/perfil" >
             <h1>Seu Perfil Aqui</h1>
          </Link>

@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 import { Home } from '../../pages/Home/Home';
 import { Container } from './Styles'
 import Logo from '../../assets/logo.png'
+import { useContext } from 'react';
+import AuthContext from '../../context/Auth';
 
 
 
 function NavBar() {
+  const { signOut } = useContext(AuthContext)
   
     
    return (                     
@@ -84,7 +87,7 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <Link to="/">
-                <button className="nav-link" to="/" exact>
+                <button onClick={signOut} className="nav-link" to="/" exact>
                  <SignOut>
                   </SignOut>sair
                </button> 
