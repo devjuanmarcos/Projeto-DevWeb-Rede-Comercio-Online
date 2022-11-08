@@ -1,15 +1,17 @@
 import { Trash } from "phosphor-react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartState } from "../../context/Context";
 
 
 export function Cart(){
+  const navigate = useNavigate();
   const {
     state: { cart },
     dispatch,
   } = CartState();
-  const [total, setTotal] = useState();
 
+  const [total, setTotal] = useState();
   const [qty, setQty] = useState();
 
   useEffect(() => {

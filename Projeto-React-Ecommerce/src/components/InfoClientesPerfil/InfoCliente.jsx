@@ -11,7 +11,6 @@ export function InfoCliente({ edit }) {
    }
 
    useEffect(() => {
-      setUserId(localStorage.getItem("@userId"))
       clientDataFetch()
    }, [])
 

@@ -7,7 +7,22 @@ export function PedidosHistory() {
    const { user } = useContext(AuthContext)
 
    const [listaPedidos, setListaPedidos] = useState([])
-   const [pedidosCLiente, setPedidosCliente] = ([])
+   const [pedidosCLiente, setPedidosCliente] = ([
+    {
+        "data_pedido": "",
+        "data_entrega": "",
+        "data_envio": "",
+        "id_cliente": 0,
+        "status": true,
+        "itemPedido": [
+          {
+            "desconto": 0,
+            "id_produto": 0,
+            "quantidade": 0
+          }
+        ]        
+      }
+   ])
 
    useEffect(() => {
       clientPedidosFetch()
@@ -17,7 +32,8 @@ export function PedidosHistory() {
       pedidoService
          .getAllPedidos()
          .then(response => {
-            setListaPedidos(response.data)
+            setListaPedidos(response.data);
+
             listaPedidos.map(pedido =>{
                 if(pedido.cliente.id_cliente === user.id_cliente){
                     setPedidosCliente(pedido);
@@ -31,7 +47,7 @@ export function PedidosHistory() {
 
    return ( 
     <div>
-        {pedidosCLiente.map((pedido) =>{
+        {pedidosCLiente.map(pedido =>{
             <Pedidos pedido={ pedido }/>
         })}
     </div>

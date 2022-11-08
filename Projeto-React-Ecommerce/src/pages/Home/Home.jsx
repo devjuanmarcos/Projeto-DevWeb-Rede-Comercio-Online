@@ -13,13 +13,11 @@ export function Home() {
    return (
       <>
       <NavBar />
-      <div>
+      <Hero />
+      <Card />
          <Link to="/perfil" >
             <h1>Seu Perfil Aqui</h1>
          </Link>
-      </div>
-      <Hero />
-      <Card />
       <Footer />
       </>
    )

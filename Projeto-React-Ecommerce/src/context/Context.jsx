@@ -42,6 +42,7 @@ return (
         {children}
     </Cart.Provider>
 )}
+
 export const CartState = () => {
     return useContext(Cart);
   };

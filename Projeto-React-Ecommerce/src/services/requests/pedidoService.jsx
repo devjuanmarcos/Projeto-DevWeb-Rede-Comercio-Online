@@ -1,19 +1,19 @@
 import { api } from "../api/api";
 
 const getAllPedidos = () => {
-    return api.get(`pedido`)
+    return api.get(`/pedidos`)
 }
 
 const getPedidoById = (id) => {
-    return api.get(`/pedido/${id}`)
+    return api.get(`/pedidos/${id}`)
 }
 
 const postPedido = (pedido) => {
-    return api.post(`/pedido`, pedido)
+    return api.post(`/pedidos`, pedido)
 }
 
 const putPedido = (id, pedido) => {
-    return api.put(`/pedido/${id}`, pedido)
+    return api.put(`/pedidos/${id}`, pedido)
 }
 
 export default {

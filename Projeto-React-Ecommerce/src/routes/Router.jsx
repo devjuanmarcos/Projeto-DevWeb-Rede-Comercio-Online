@@ -16,7 +16,7 @@ export function Router() {
    if (!isAuthenticated) {
       return (
          <Routes>
-            <Route path="/" element={<Home />} />
+            <Route index path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/contato" element={<Contato />} />
@@ -28,7 +28,7 @@ export function Router() {
 
    return (
       <Routes>
-         <Route path="/" element={<Home />} />
+         <Route index path="/" element={<Home />} />
          <Route path="/perfil" element={<Perfil />} />
          <Route path="/contato" element={<Contato />} />
          <Route path="/carrinho" element={<Cart />} />

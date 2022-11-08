@@ -2,8 +2,10 @@ import ProdutoCards from "../../components/ProdutoCards/ProdutoCards";
 import { CartState } from "../../context/Context";
 import { useState, useEffect } from "react";
 import produtoService from "../../services/requests/produtoService"; 
+import { useNavigate } from "react-router-dom";
 
 export const Produto = () => {
+    const navigate = useNavigate();
 
     // const {
     //     state: { products },
