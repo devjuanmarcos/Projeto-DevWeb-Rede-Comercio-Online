@@ -24,9 +24,9 @@ const Footer = () => {
             </Text>
           </Column>
           <Column>
-            <FooterLink href="#">Nome Categoria</FooterLink>
-            <FooterLink href="#">Nome Categoria</FooterLink>
-            <FooterLink href="#">Nome Categoria</FooterLink>
+            <FooterLink href="#">Todos os produtos</FooterLink>
+            <FooterLink href="#">Mouse</FooterLink>
+            <FooterLink href="#">Teclado</FooterLink>
           </Column>
           <Column>
             <FooterLink href="#">F.A.Q.s</FooterLink>
