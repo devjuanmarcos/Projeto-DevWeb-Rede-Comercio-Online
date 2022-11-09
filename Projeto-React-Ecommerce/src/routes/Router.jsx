@@ -29,12 +29,13 @@ export function Router() {
    return (
       <Routes>
          <Route index path="/" element={<Home />} />
+         <Route path="/login" element={<Login />} />
+         <Route path="/cadastro" element={<Cadastro />} />
          <Route path="/perfil" element={<Perfil />} />
          <Route path="/contato" element={<Contato />} />
+         <Route path="/produto" element={<Produto />} />
          <Route path="/carrinho" element={<Cart />} />
          <Route path=" * " element={<PageNotFound />} />
       </Routes>
    )
-
-
 }

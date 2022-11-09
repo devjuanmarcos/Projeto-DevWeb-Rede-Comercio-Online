@@ -26,7 +26,7 @@ export function Cadastro() {
    async function toastieSuccess(loading) {
       let timeout = 3500;
         toast.update(loading, {
-         render: "Legal! Você já está cadastrado! Vamos levaar você para o Login",
+         render: "Legal! Você já está cadastrado! Vamos levar você para o Login",
          type: "success",
          autoClose: timeout,
          isLoading: false,
@@ -36,7 +36,7 @@ export function Cadastro() {
       })
 
       setTimeout(() => {
-        navigate("/")
+        navigate("/login")
       }, timeout); 
    }
 

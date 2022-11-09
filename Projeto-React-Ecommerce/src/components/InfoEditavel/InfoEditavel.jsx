@@ -43,6 +43,7 @@ export function InfoEditavel({ edit }) {
    function patchUserNewInfo(id, userUpdate) {
       clienteService.putCliente(id, userUpdate).then(response=>{
          console.log(response.data);
+         alert("funcionou seu PUT")
       }).catch(error=>{
          console.log(error)
       })

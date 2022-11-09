@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import clienteService from "../services/requests/clienteService"
+import { toast } from "react-toastify"
 
 const AuthContext = createContext({})
 
@@ -63,6 +64,7 @@ export const AuthProvider = ({ children }) => {
       setIsAuthenticated(false)
       setUser("")
       localStorage.clear()
+      toast.success("Deslogado com sucesso, Volte Sempre!")
    }
 
    return (
